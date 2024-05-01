@@ -44,15 +44,40 @@ public class Graph {
         }
     }
 
+    private static String[] generateProvinceArgentinaStrings() {
+		return new String[]{ 
+            "Buenos Aires", "Ciudad Autonoma de Buenos Aires", "Catamarca",
+            "Chaco", "Chubut", "Cordoba", "Corrientes", "Entre Rios",
+            "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza",
+            "Misiones", "Neuquen", "Rio Negro", "Salta", "San Juan",
+            "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero",
+            "Tierra del Fuego, Antartida e Islas del Atlántico Sur",
+            "Tucuman"
+			};
+
+        }
+
+
+
     public static void main(String[] args) {
         Graph Argentina = new Graph();
 
-        Vertex buenosAires = Argentina.addVertex("Buenos Aires");
-        Vertex cordoba = Argentina.addVertex("Cordoba");
-
-        Argentina.addEdge(buenosAires, cordoba, 50);
-
+        String[] provinceNames = generateProvinceArgentinaStrings();
+        Vertex[] provinces = new Vertex[provinceNames.length];
+        for (int i = 0; i < provinceNames.length; i++) {
+            provinces[i] = Argentina.addVertex(provinceNames[i]);
+        }
+    
+        //Esto es una prueba no es algo definitivo pero es para ver si funciona los metodos
+    
+        // Ejemplo de cómo agregar algunos Edges o Artistas
+        Argentina.addEdge(provinces[0], provinces[1], 1); // Ejemplo de borde entre Buenos Aires y capital
+        Argentina.addEdge(provinces[0], provinces[2], 1); // Ejemplo de borde entre Buenos Aires y Catamarca
+    
+        // Imprime el grafo
         Argentina.print();
+
+
     }
 
 }
