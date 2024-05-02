@@ -5,6 +5,7 @@ import java.util.*;
 public class Kruskal {
 
     //Esto es para ver como el algortimo funciona
+    //No es mi codigo
 
     private ArrayList<Edge> edges = new ArrayList<>();
 

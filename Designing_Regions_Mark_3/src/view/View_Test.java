@@ -20,6 +20,7 @@ public class View_Test extends JFrame {
 
     private void initialization() {
         setSize(800, 600);
+        setTitle("Designing Regions");
         JMapViewer mapViewer = new JMapViewer();
 
         this.add(mapViewer, BorderLayout.CENTER);
