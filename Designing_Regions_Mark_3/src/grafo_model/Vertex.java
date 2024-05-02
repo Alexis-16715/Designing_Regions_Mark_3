@@ -9,6 +9,9 @@ public class Vertex {
     private ArrayList<Edge> edges;
 
 
+    
+
+
     public Vertex(String data){
         this.data = data;
         this.edges = new ArrayList<Edge>();
@@ -27,6 +30,10 @@ public class Vertex {
 
     public String getData() {
         return data;
+    }
+
+    public ArrayList<Edge> getEdges() {
+        return edges;
     }
 
     public void print() {

@@ -72,7 +72,7 @@ public class Graph {
     
         // Ejemplo de cómo agregar algunos Edges o Artistas
         Argentina.addEdge(provinces[0], provinces[1], 1); // Ejemplo de borde entre Buenos Aires y capital
-        Argentina.addEdge(provinces[0], provinces[2], 1); // Ejemplo de borde entre Buenos Aires y Catamarca
+        Argentina.addEdge(provinces[0], provinces[2], 5); // Ejemplo de borde entre Buenos Aires y Catamarca
     
         // Imprime el grafo
         Argentina.print();

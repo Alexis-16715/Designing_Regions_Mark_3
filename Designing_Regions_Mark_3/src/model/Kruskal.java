@@ -4,6 +4,8 @@ import java.util.*;
 
 public class Kruskal {
 
+    //Esto es para ver como el algortimo funciona
+
     private ArrayList<Edge> edges = new ArrayList<>();
 
     private ArrayList<Vertex> vertices = new ArrayList<>();
