@@ -1,14 +1,14 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
-import org.openstreetmap.gui.jmapviewer.JMapViewer;
-import org.openstreetmap.gui.jmapviewer.MapMarkerDot;
+import org.openstreetmap.gui.jmapviewer.*;
 
 
 
@@ -32,10 +32,34 @@ public class View_Test extends JFrame {
             provinceMarkers.add(marker);
             mapViewer.addMapMarker(marker);
         }
+        
+        drawLine(mapViewer, Province.BUENOS_AIRES, Province.MISIONES);
+
+        mapViewer.setDisplayPosition(new Coordinate(-30, -60), 5);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
+
+    // No funciona
+    private void drawLine(JMapViewer mapViewer, Province province1, Province province2) {
+        System.err.println(province1.getLatitude());
+        System.err.println(province2.getLatitude());
+        Coordinate pos1 = new Coordinate(province1.getLatitude(), province1.getLongitude());
+        Coordinate pos2 = new Coordinate(province2.getLatitude(), province2.getLongitude());
+
+        MapPolygonImpl line = new MapPolygonImpl(new ArrayList<Coordinate>() {{
+            add(pos1);
+            add(pos2);
+        }});
+        
+        line.isVisible();
+        line.setColor(Color.RED); // Set line color to red for visibility
+        mapViewer.addMapPolygon(line);
+        mapViewer.setDisplayToFitMapPolygons(); // Adjust map view to fit the line
+        repaint();
+    }
+
 
     private enum Province {
         BUENOS_AIRES("Buenos Aires", -36.605, -58.435),
@@ -96,7 +120,7 @@ public class View_Test extends JFrame {
 
         @Override
         public void paint(Graphics g, Point position, int radio) {
-            // You can customize marker appearance here
+            // Se puede modificar la aparaciensa aqui
             super.paint(g, position, radio*2);
         }
 

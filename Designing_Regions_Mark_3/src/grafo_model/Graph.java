@@ -51,13 +51,11 @@ public class Graph {
             "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza",
             "Misiones", "Neuquen", "Rio Negro", "Salta", "San Juan",
             "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero",
-            "Tierra del Fuego, Antartida e Islas del Atlántico Sur",
+            "Tierra del Fuego, Antartida e Islas del Atlantico Sur",
             "Tucuman"
 			};
 
         }
-
-
 
     public static void main(String[] args) {
         Graph Argentina = new Graph();
